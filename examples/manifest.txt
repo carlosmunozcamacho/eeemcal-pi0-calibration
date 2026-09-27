@@ -1,0 +1,4 @@
+# Replace these placeholders with reconstructed inputs. Relative paths resolve here.
+/path/to/reco/file_0001.eicrecon.edm4eic.root
+/path/to/reco/file_0002.eicrecon.edm4eic.root
+# root://your-xrootd-host//path/to/reco/file_0003.eicrecon.edm4eic.root

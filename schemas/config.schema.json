@@ -1,0 +1,290 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "clusters": {
+          "type": "string"
+        },
+        "hits": {
+          "type": "string"
+        },
+        "event_header": {
+          "type": "string"
+        },
+        "primary_vertices": {
+          "type": "string"
+        },
+        "track_matches": {
+          "type": "string"
+        },
+        "tracks": {
+          "type": "string"
+        },
+        "mc_particles": {
+          "type": "string"
+        },
+        "associations": {
+          "type": "string"
+        },
+        "chunk": {
+          "type": "integer"
+        },
+        "candidate_floor_GeV": {
+          "type": "number"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "geometry_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cellid_encoding": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "baseline_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inventory": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expected_manifest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identity_map": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legacy_compatibility_acknowledged": {
+          "type": "boolean"
+        }
+      }
+    },
+    "vertex": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allow_nominal": {
+          "type": "boolean"
+        },
+        "nominal_mm": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "max_xy_mm": {
+          "type": "number"
+        },
+        "max_z_mm": {
+          "type": "number"
+        }
+      }
+    },
+    "split": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "training_fraction": {
+          "type": "number"
+        },
+        "seed": {
+          "type": "string"
+        },
+        "convention": {
+          "type": "string"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "energy_GeV": {
+          "type": "number"
+        },
+        "neutral": {
+          "type": "boolean"
+        },
+        "asymmetry": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "overlap": {
+          "type": "number"
+        },
+        "different_seeds": {
+          "type": "boolean"
+        },
+        "ranking": {
+          "type": "string"
+        }
+      }
+    },
+    "peak": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fit_range": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "bins": {
+          "type": "integer"
+        },
+        "background_form": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "entries": {
+              "type": "integer"
+            },
+            "signal": {
+              "type": "integer"
+            },
+            "significance": {
+              "type": "number"
+            },
+            "mean_bounds": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "sigma_bounds": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "window_sigma": {
+          "type": "number"
+        }
+      }
+    },
+    "solver": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min_usage": {
+          "type": "integer"
+        },
+        "meaningful_fraction": {
+          "type": "number"
+        },
+        "rcond": {
+          "type": "number"
+        },
+        "iterations": {
+          "type": "integer"
+        },
+        "max_step": {
+          "type": "number"
+        },
+        "step_tolerance": {
+          "type": "number"
+        },
+        "bias_tolerance": {
+          "type": "number"
+        },
+        "chunk": {
+          "type": "integer"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "halves": {
+          "type": "boolean"
+        },
+        "half_seed": {
+          "type": "integer"
+        },
+        "stability_warn": {
+          "type": "number"
+        },
+        "stability_fail": {
+          "type": "number"
+        },
+        "low_support": {
+          "type": "integer"
+        },
+        "projection_min": {
+          "type": "number"
+        },
+        "width_warning": {
+          "type": "number"
+        },
+        "closure": {
+          "type": "boolean"
+        },
+        "closure_seed": {
+          "type": "integer"
+        },
+        "detailed_events": {
+          "type": "boolean"
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "histogram_bins": {
+          "type": "integer"
+        }
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instantaneous_cm2_s": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Producer physics configuration"
+}

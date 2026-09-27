@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Producer summary v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_status",
+    "numerical_status",
+    "physics_qa_status",
+    "normalization",
+    "reasons"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "execution_status": {
+      "enum": [
+        "PASS",
+        "WARNING",
+        "FAIL",
+        "NOT_EVALUATED"
+      ]
+    },
+    "numerical_status": {
+      "enum": [
+        "PASS",
+        "WARNING",
+        "FAIL",
+        "NOT_EVALUATED"
+      ]
+    },
+    "physics_qa_status": {
+      "enum": [
+        "PASS",
+        "WARNING",
+        "FAIL",
+        "NOT_EVALUATED"
+      ]
+    },
+    "normalization": {
+      "type": "object",
+      "required": [
+        "status"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "counts": {
+      "type": "object"
+    },
+    "active_parameters": {
+      "type": "integer"
+    },
+    "final_matrix": {
+      "type": "object",
+      "required": [
+        "retained_modes",
+        "discarded_modes",
+        "projection"
+      ]
+    }
+  }
+}

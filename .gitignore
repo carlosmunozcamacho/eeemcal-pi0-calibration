@@ -1,0 +1,35 @@
+# Python/build environments and artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+# Local runtime products (small fixtures are generated on demand)
+results/
+cache/
+work/
+logs/
+*.root
+*.npz
+*.log
+slurm-*.out
+# Editor/OS temporary files and local credentials
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env
+.env.*

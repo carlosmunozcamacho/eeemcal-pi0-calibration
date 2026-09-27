@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+kind: data
+source: 'Example external run-luminosity ledger; replace before use'
+convention: recorded
+use: recorded_luminosity
+precision: approximate
+recorded_luminosity: {value: 2.0, unit: pb^-1}
+delivered_luminosity: {value: 2.2, unit: pb^-1}
+elapsed_seconds: 3000
+live_seconds: 2800
+runs: [example_run]
+assumptions: ['Illustrative numbers; no experiment database adapter implied']

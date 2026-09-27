@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+kind: simulation
+source: 'Replace with generator production bookkeeping reference'
+convention: 'Disjoint unit-weight pieces of one generation ensemble; N_generated/sigma'
+assumptions: ['Illustrative values only; replace with metadata for your inputs']
+disjoint_generated_pieces: true
+components:
+  - piece_id: run001_entries_0_999
+    ensemble: example_same_process_and_phase_space
+    generated_events_represented: 1000
+    count_convention: 'Illustrative unskimmed/no-loss subset; not inferred from selected pairs'
+    weights: unit
+    unit_weight_convention_confirmed: true
+    precision: approximate
+    cross_section: {value: 2.0, unit: nb}
+    # evgen_file: /path/to/matching/run001.hepmc3.tree.root

@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+include CITATION.cff CHANGELOG.md RELEASE_NOTES_v0.1.0.md
+include .github/workflows/ci.yml
+include README.md CONTRIBUTING.md .gitignore LICENSE COPYING NOTICE.md THIRD_PARTY_NOTICES.md
+recursive-include docs *.md *.json *.pdf *.png
+recursive-include examples *.yaml *.txt
+recursive-include schemas *.json
+recursive-include tests *.py

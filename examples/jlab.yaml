@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+# Generic JLab-style site example. Replace placeholders before submitting.
+# Install the producer in a shared environment accessible inside the launcher.
+# Values are literal argv/path strings: no shell-variable or tilde expansion.
+account: <ACCOUNT>
+partition: <PARTITION>
+qos: null
+launcher: [/path/to/eic-shell, --]
+python: /shared/pi0/venv/bin/python
+files_per_shard: 25
+files_per_task: 50
+concurrency: 16
+extraction: {cpus: 2, memory: 8G, time: '04:00:00'}
+analysis: {cpus: 2, memory: 16G, time: '01:00:00'}

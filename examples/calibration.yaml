@@ -1,0 +1,86 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+# Demonstration settings. Declare your geometry, cellID encoding and baseline identifiers.
+input:
+  clusters: EcalEndcapNClusters
+  hits: EcalEndcapNRecHits
+  event_header: EventHeader
+  primary_vertices: PrimaryVertices
+  track_matches: EcalEndcapNTrackClusterMatches
+  tracks: CentralCKFTracks
+  mc_particles: MCParticles
+  associations: EcalEndcapNClusterAssociations
+  chunk: 128
+  candidate_floor_GeV: 0.15
+  mode: auto
+  geometry_id: null
+  cellid_encoding: null
+  baseline_id: null
+  inventory: null
+  expected_manifest: null
+  identity_map: null
+  legacy_compatibility_acknowledged: false
+vertex:
+  allow_nominal: true
+  nominal_mm:
+  - 0.0
+  - 0.0
+  - 0.0
+  max_xy_mm: 20.0
+  max_z_mm: 300.0
+split:
+  training_fraction: 0.8
+  seed: pi0-v1
+  convention: blake2b-mod5
+selection:
+  energy_GeV: 0.2
+  neutral: true
+  asymmetry: 0.8
+  overlap: 0.2
+  different_seeds: true
+  ranking: largest_energy_sum
+peak:
+  fit_range:
+  - 0.04
+  - 0.24
+  bins: 50
+  background_form: exponential
+  criteria:
+    entries: 60
+    signal: 15
+    significance: 4.0
+    mean_bounds:
+    - 0.076
+    - 0.194
+    sigma_bounds:
+    - 0.0041
+    - 0.0279
+  window_sigma: 2.0
+solver:
+  min_usage: 10
+  meaningful_fraction: 0.05
+  rcond: 0.001
+  iterations: 24
+  max_step: 0.1
+  step_tolerance: 0.0001
+  bias_tolerance: 1.0e-06
+  chunk: 2048
+qa:
+  halves: true
+  half_seed: 20260924
+  stability_warn: 0.05
+  stability_fail: 0.1
+  low_support: 20
+  projection_min: 0.99
+  width_warning: 0.05
+  closure: false
+  closure_seed: 41256
+  detailed_events: false
+  formats:
+  - png
+  - pdf
+  histogram_bins: 60
+normalization:
+  metadata: null
+  instantaneous_cm2_s:
+  - 1.0e+33
+  - 1.0e+34

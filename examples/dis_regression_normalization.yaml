@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+kind: reported_exposure
+source: 'Completed project DIS 25.10.0 estimate, 11379 files; reused without a new audit'
+convention: 'Approximate available-event equivalent under original unit-weight/no-loss estimate'
+precision: approximate
+luminosity: {value: 6.689416, unit: pb^-1}
+assumptions: ['Planning normalization only; detailed production losses were not audited']

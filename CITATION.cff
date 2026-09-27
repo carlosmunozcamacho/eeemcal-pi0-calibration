@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+cff-version: 1.2.0
+message: "Please cite this software when using it in your research."
+type: software
+title: "eeemcal-pi0-calibration: EEEMCal pi0 calibration software"
+version: 0.1.0
+license: LGPL-3.0-or-later
+authors:
+  - family-names: "Muñoz Camacho"
+    given-names: "Carlos"
+abstract: >-
+  Candidate per-crystal relative gain determination for the ePIC backward
+  electromagnetic calorimeter using reconstructed two-photon showers,
+  a constrained Jones-style calibration and independent held-out validation.
+keywords:
+  - ePIC
+  - EEEMCal
+  - calorimeter calibration
+  - pi0

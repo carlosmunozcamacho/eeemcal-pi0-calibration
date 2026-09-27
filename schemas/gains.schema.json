@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "format": "CSV",
+  "cellID": "unsigned 64-bit decimal integer; parse as string/int, never float",
+  "fields": {
+    "cellID": "uint64",
+    "crystal_number": "int, 1-based cellID order",
+    "x_mm": "float, may be NaN",
+    "y_mm": "float, may be NaN",
+    "z_mm": "float, may be NaN",
+    "relative_gain": "positive float64 multiplier on declared baseline",
+    "meaningful_support": "integer distinct training-window events",
+    "active": "boolean",
+    "half_change": "float or blank when not evaluated",
+    "retained_projection": "float or blank",
+    "status": "semicolon-delimited candidate/unsupported/unchanged/low_support/unstable/stability_warning/rank_sensitive/global_rank_truncated/numerical_failure/stability_not_accepted/stability_not_evaluated"
+  }
+}

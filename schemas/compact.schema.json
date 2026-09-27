@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "format": "NumPy NPZ, no pickle",
+  "arrays": {
+    "candidate_schema": "scalar 1 (legacy-compatible)",
+    "candidate_floor_GeV": "float scalar",
+    "inputs": "canonical strings (no physical location rewrite on reuse)",
+    "cell_id": "sorted uint64[K]",
+    "cell_position": "float64[K,3] mm",
+    "event_file_index": "int[E]",
+    "event_entry": "int[E]",
+    "event_run": "int[E]",
+    "event_number": "int[E]",
+    "event_train": "bool[E]",
+    "event_offsets": "int64[E+1]",
+    "cluster_index": "int[C]",
+    "energy": "float64[C] GeV",
+    "position": "float64[C,3] mm",
+    "vertex": "float64[C,3] mm",
+    "vertex_source": "string[C]",
+    "hit_offsets": "int64[C+1]",
+    "hit_cell_id": "uint64[H]",
+    "hit_contribution": "float64[H] assigned GeV",
+    "track_matched": "bool[C], required for neutral veto",
+    "cache_metadata": "JSON scalar string: compatibility identifiers, split, vertex, software version",
+    "truth_*": "optional diagnostic arrays"
+  },
+  "completion": "candidates.json records original input counts; new shards add signature-bound complete.json; cache index lists all intended shards"
+}

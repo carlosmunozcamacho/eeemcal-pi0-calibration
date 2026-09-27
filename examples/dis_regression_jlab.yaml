@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+# Historical regression declarations; replace expected_manifest with your saved manifest.
+# This example does not include the compact dataset and is not a request to rerun it.
+input:
+  geometry_id: epic_craterlake_25.10.0_persisted_channel_map
+  cellid_encoding: 'system:8,sector:4,row:8,column:8'
+  baseline_id: EEMC_RECO_25.10.0_existing_hit_and_cluster_response
+  legacy_compatibility_acknowledged: true
+  expected_manifest: /path/to/dis/manifests/stage_11379.txt
+normalization:
+  metadata: dis_regression_normalization.yaml

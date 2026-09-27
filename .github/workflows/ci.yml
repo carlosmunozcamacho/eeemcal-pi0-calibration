@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+name: Portable tests and distributions
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Minimum declared Python plus representative newer supported versions.
+        python: ['3.10', '3.12', '3.13']
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install package and release-check tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install . build twine cffconvert
+      - name: Portable unit and synthetic tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Import and CLI smoke tests
+        run: |
+          python -c "import eeemcal_pi0; assert eeemcal_pi0.__version__ == '0.1.0'"
+          pi0-calibrate --help
+          python -m eeemcal_pi0 --help
+      - name: Validate citation
+        run: cffconvert --validate
+      - name: Build source distribution and wheel
+        run: python -m build
+      - name: Check distributions and their contents
+        run: |
+          python -m twine check --strict dist/*
+          python tests/check_release.py dist
+      - name: Install and smoke-test wheel outside the source tree
+        shell: bash
+        run: |
+          wheel=$(realpath dist/*.whl)
+          clean=$(mktemp -d)
+          python -m venv "$clean/venv"
+          "$clean/venv/bin/python" -m pip install "$wheel"
+          cd "$clean"
+          unset PYTHONPATH
+          "$clean/venv/bin/python" -I -c "import eeemcal_pi0; from importlib.metadata import version; assert version('eeemcal-pi0') == '0.1.0'; print(eeemcal_pi0.__file__)"
+          "$clean/venv/bin/pi0-calibrate" --help
+          "$clean/venv/bin/python" -I -m eeemcal_pi0 --help
