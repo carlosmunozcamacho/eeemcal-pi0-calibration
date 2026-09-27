@@ -4,6 +4,8 @@ message: "Please cite this software when using it in your research."
 type: software
 title: "eeemcal-pi0-calibration: EEEMCal pi0 calibration software"
 version: 0.1.0
+doi: 10.5281/zenodo.23002457
+repository-code: https://github.com/carlosmunozcamacho/eeemcal-pi0-calibration
 license: LGPL-3.0-or-later
 authors:
   - family-names: "Muñoz Camacho"

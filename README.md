@@ -1,5 +1,7 @@
 # eeemcal-pi0-calibration
 
+[![DOI (all versions)](https://zenodo.org/badge/DOI/10.5281/zenodo.23002456.svg)](https://doi.org/10.5281/zenodo.23002456)
+
 Derive **candidate per-crystal relative gains** for the ePIC backward
 electromagnetic calorimeter (EEEMCal) from reconstructed π0 → γγ showers.
 The Python distribution is `eeemcal-pi0`; the import package is `eeemcal_pi0`.
@@ -97,7 +99,7 @@ mechanism. See [EICRecon handoff](docs/eicrecon_integration.md).
 These candidate gains are **not official production detector constants**;
 real-data calibration is not yet validated.
 
-## License, provenance and citation
+## License and provenance
 
 See [LICENSE](LICENSE), incorporated GPLv3 terms in [COPYING](COPYING),
 [NOTICE.md](NOTICE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
@@ -108,5 +110,12 @@ already present upstream.
 The method is R. T. Jones et al., NIM A 566 (2006) 366–374,
 [DOI 10.1016/j.nima.2006.07.061](https://doi.org/10.1016/j.nima.2006.07.061),
 Section 3, equations (1)–(9). The article and upstream notebook are not bundled.
-Software citation metadata: [CITATION.cff](CITATION.cff).
+
+## Citation
+
+Cite release **v0.1.0** using its Zenodo DOI:
+[10.5281/zenodo.23002457](https://doi.org/10.5281/zenodo.23002457).
+Machine-readable citation metadata are in [CITATION.cff](CITATION.cff);
+the badge above links to the all-versions DOI.
+
 See the [changelog](CHANGELOG.md) and [v0.1.0 release notes](RELEASE_NOTES_v0.1.0.md).
